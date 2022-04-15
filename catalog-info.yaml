@@ -2,7 +2,7 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: backstage
-  description: An example of a Backstage application.
+  description: Hoptek Developer Portal
 spec:
   type: website
   owner: john@example.com

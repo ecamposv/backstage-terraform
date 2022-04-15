@@ -51,6 +51,7 @@ module "aws_ssm" {
   github_client_secret = var.github_client_secret
   access_key_id        = var.access_key_id
   secret_access_key    = var.secret_access_key
+  azure_token          = var.azure_token
   depends_on           = [module.aws_rds]
 }
 
@@ -91,5 +92,6 @@ module "aws_ecs" {
   secret_access_key_arn    = module.aws_ssm.secret_access_key_arn
   target_group_arn         = module.aws_alb.target_group_arn
   alb_dns_name             = module.aws_alb.alb_dns_name
+  azure_token_arn          = module.aws_ssm.azure_token_arn
   depends_on               = [module.aws_vpc, module.aws_alb, module.aws_s3, module.aws_ssm, module.aws_iam]
 }

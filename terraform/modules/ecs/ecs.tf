@@ -29,7 +29,8 @@ resource "aws_ecs_task_definition" "default_task" {
       {"name": "AUTH_GITHUB_CLIENT_ID", "valueFrom": var.github_client_id_arn},
       {"name": "AUTH_GITHUB_CLIENT_SECRET", "valueFrom": var.github_client_secret_arn},
       {"name": "ACCESS_KEY_ID", "valueFrom": var.access_key_id_arn},
-      {"name": "SECRET_ACCESS_KEY", "valueFrom": var.secret_access_key_arn}
+      {"name": "SECRET_ACCESS_KEY", "valueFrom": var.secret_access_key_arn},
+      {"name": "AZURE_TOKEN", "valueFrom": var.azure_token_arn}
     ]
     environment: [
       {"name": "APP_DOMAIN", "value": "http://${var.alb_dns_name}"},

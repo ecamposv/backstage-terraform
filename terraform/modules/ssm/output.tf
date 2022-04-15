@@ -29,3 +29,7 @@ output access_key_id_arn {
 output secret_access_key_arn {
   value = aws_ssm_parameter.secret_access_key.arn
 }
+
+output azure_token_arn {
+  value = aws_ssm_parameter.azure_token.arn
+}

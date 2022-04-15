@@ -2,9 +2,9 @@ terraform {
   required_version = "~> 1.0.2"
 
   backend "s3" {
-    bucket = "{{BUCKET-NAME}}"
+    bucket = "hoptekterraform"
     key    = "tf-state.json"
-    region = "eu-west-1"
+    region = "us-west-1"
     workspace_key_prefix = "environment"
   }  
 

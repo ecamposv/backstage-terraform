@@ -1,18 +1,21 @@
 app:
-  title: Backstage App
-  baseUrl: ${APP_DOMAIN}
+  title: Developer Portal
+  #baseUrl: ${APP_DOMAIN}
+  baseUrl: http://developer-portal-alb-2035608837.us-west-1.elb.amazonaws.com
 
 organization:
-  name: Sparkfabrik
+  name: Developer Portal
 
 backend:
-  baseUrl: ${APP_DOMAIN}
+  #baseUrl: ${APP_DOMAIN}
+  baseUrl: http://developer-portal-alb-2035608837.us-west-1.elb.amazonaws.com
   listen:
     port: 7000
   csp:
     connect-src: ["'self'", 'http:', 'https:']
   cors:
-    origin: ${APP_DOMAIN}
+    #origin: ${APP_DOMAIN}
+    origin: http://developer-portal-alb-2035608837.us-west-1.elb.amazonaws.com
     methods: [GET, POST, PUT, DELETE]
     credentials: true
   database:
@@ -27,6 +30,9 @@ integrations:
   github:
     - host: github.com
       token: ${GITHUB_TOKEN}
+  azure:
+    - host: dev.azure.com
+      token: ${AZURE_TOKEN}   
 
 techdocs:
   builder: 'external'
@@ -69,6 +75,7 @@ catalog:
     - type: url
       target: https://github.com/backstage/backstage/blob/master/packages/catalog-model/examples/all-apis.yaml
 
+    
     # Backstage example resources
     - type: url
       target: https://github.com/backstage/backstage/blob/master/packages/catalog-model/examples/all-resources.yaml
@@ -79,11 +86,13 @@ catalog:
 
     # Backstage example templates
     - type: url
-      target: https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend/sample-templates/react-ssr-template/template.yaml
+      #target: https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend/sample-templates/react-ssr-template/template.yaml
+      target: https://github.com/backstage/software-templates/blob/main/scaffolder-templates/react-ssr-template/template.yaml
       rules:
         - allow: [Template]
     - type: url
-      target: https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend/sample-templates/springboot-grpc-template/template.yaml
+      #target: https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend/sample-templates/springboot-grpc-template/template.yaml
+      target: https://github.com/backstage/software-templates/blob/main/scaffolder-templates/springboot-grpc-template/template.yaml
       rules:
         - allow: [Template]
     - type: url
@@ -91,6 +100,7 @@ catalog:
       rules:
         - allow: [Template]
     - type: url
-      target: https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend/sample-templates/docs-template/template.yaml
+      #target: https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend/sample-templates/docs-template/template.yaml
+      target: https://github.com/backstage/software-templates/blob/main/scaffolder-templates/docs-template/template.yaml
       rules:
         - allow: [Template]

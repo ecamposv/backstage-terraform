@@ -22,7 +22,7 @@ resource "aws_db_instance" "default_db" {
   allocated_storage       = var.storage
   storage_type            = "gp2"
   engine                  = "postgres"
-  engine_version          = "13.2"
+  engine_version          = "13.3"
   parameter_group_name    = "default.postgres13"
   instance_class          = "db.t3.micro"
   username                = var.username
@@ -33,7 +33,7 @@ resource "aws_db_instance" "default_db" {
   backup_retention_period = 15
   backup_window           = "03:00-04:00"
   maintenance_window      = "wed:04:30-wed:05:30" 
-  availability_zone       = "eu-west-1b"
+  availability_zone       = "us-west-1b"
   db_subnet_group_name    = aws_db_subnet_group.default_sn.name
   vpc_security_group_ids  = [aws_security_group.rds_instance_sg.id]
 }

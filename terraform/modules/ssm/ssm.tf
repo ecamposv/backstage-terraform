@@ -45,3 +45,9 @@ resource "aws_ssm_parameter" "secret_access_key" {
   type  = "String"
   value = var.secret_access_key
 }
+
+resource "aws_ssm_parameter" "azure_token" {
+  name  = "AZURE_TOKEN"
+  type  = "String"
+  value = var.azure_token
+}

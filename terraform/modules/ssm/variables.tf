@@ -33,3 +33,7 @@ variable access_key_id {
 variable secret_access_key {
   type = string
 }
+
+variable azure_token {
+  type = string
+}

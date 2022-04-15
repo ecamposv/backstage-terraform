@@ -73,3 +73,7 @@ variable target_group_arn {
 variable alb_dns_name {
   type = string
 }
+
+variable azure_token_arn {
+  type = string
+}
